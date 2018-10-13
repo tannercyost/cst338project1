@@ -1,6 +1,9 @@
+import java.util.ArrayList;
+
 /**
  * Instructor.java
- * Abstract: TODO
+ * Abstract: Class representing an instructor at a school. Basic private fields, including an ArrayList field for
+ *           storing the courses the instructor is teaching.
  *
  * Tanner Yost
  * 9/29/2018
@@ -10,20 +13,32 @@ public class Instructor {
     private String email;
     private int id;
     private String phone;
-
+    private ArrayList<Course> teaching;
 
     /*
         Constructors
      */
+
     public Instructor (int id, String name, String email, String phone) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.phone = phone;
+        this.teaching = new ArrayList<>();
     }
+
+    /*
+        Methods
+     */
+
+    public void addToTeaching(Course course) {
+        teaching.add(course);
+    }
+
     /*
         Getters and Setters
      */
+
     public String getName() {
         return name;
     }
